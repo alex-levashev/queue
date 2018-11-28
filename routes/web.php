@@ -16,3 +16,7 @@
 // });
 
 Route::get('/', 'Tasks@ShowTasks');
+
+Route::get('/tasks/{id}', function ($id) {
+    echo $id;
+});
