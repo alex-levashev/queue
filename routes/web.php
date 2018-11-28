@@ -18,7 +18,7 @@
 Route::get('/', 'Tasks@ShowTasks');
 
 Route::get('/tasks/{id}', function ($id) {
-  $count = DB::table('tasks')->where('id', $id)->pluck('counter');
+  $count = DB::table('tasks')->where('id', $id)->value('counter');;
   $conut = intval($count);
   echo $count;
 });
