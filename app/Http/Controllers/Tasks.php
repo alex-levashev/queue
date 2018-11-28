@@ -12,7 +12,7 @@ class Tasks extends Controller
       $tasks = DB::table('tasks')->get();
       foreach ($tasks as $task) {
         echo $task->id . ' | <a href="/tasks/' . $task->id . '">' . $task->name . '</a> | ' . $task->counter . '<br>';
-        echo '------------';
+        echo '------------<br>';
       }
 
     }
