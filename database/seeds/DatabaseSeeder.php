@@ -11,6 +11,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+      DB::table('tasks')->insert(
+        [
+          'name' => 'Получение письма',
+          'counter' => 0,
+        ]);
+      DB::table('tasks')->insert(
+        [
+          'name' => 'Отправка письма',
+          'counter' => 0,
+        ]);
+      DB::table('tasks')->insert(
+        [
+          'name' => 'Получение посылки',
+          'counter' => 0,
+        ]);
+      DB::table('tasks')->insert(
+        [
+          'name' => 'Отправка посылки',
+          'counter' => 0,
+        ]);
     }
 }
