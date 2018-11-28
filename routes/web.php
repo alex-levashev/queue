@@ -18,6 +18,6 @@
 Route::get('/', 'Tasks@ShowTasks');
 
 Route::get('/tasks/{id}', function ($id) {
-  DB::table('tasks')->increment('counter');
+  DB::table('tasks')->where('id', $id)->increment('counter');
   return Redirect::back();
 });
