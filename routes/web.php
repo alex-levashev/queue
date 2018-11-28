@@ -18,10 +18,11 @@
 Route::get('/', 'Tasks@ShowTasks');
 
 Route::get('/tasks/{id}', function ($id) {
-  $count = DB::table('tasks')->where('id', $id)->value('counter');;
+  $count = DB::table('tasks')->where('id', $id)->value('counter');
   $count += intval($count);
   DB::table('tasks')
    ->where('id',$id)
    ->update(['counter' => strval($count)]);
-  // echo $count;
+   $count1 = DB::table('tasks')->where('id', $id)->value('counter');
+   echo $count1;
 });
