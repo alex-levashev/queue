@@ -11,13 +11,11 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', 'Tasks@ShowTasks');
-
-Route::get('/tasks/{id}', function ($id) {
-  DB::table('tasks')->where('id', $id)->increment('counter');
-  return Redirect::back();
+Route::get('/welcome', function () {
+    return view('welcome');
 });
+
+Route::get('/', 'Tasks@ShowTasks')->name('root');
+Route::get('/tasks/{id}', 'Tasks@AddTask');
+Route::get('/queue', 'Tasks@TasksLog');
+Route::get('/proceed', 'Tasks@TaskProceed');
